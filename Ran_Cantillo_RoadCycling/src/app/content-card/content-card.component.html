@@ -1,0 +1,8 @@
+<p>content-card works!</p>
+
+<div *ngFor="let contentItem of contentList.content; let i = index">
+    <div>
+      <h3>Content Item {{ i + 1 }}</h3>
+      <div [innerHTML]="contentList.getHtmlOutput(i)"></div>
+    </div>
+</div>
