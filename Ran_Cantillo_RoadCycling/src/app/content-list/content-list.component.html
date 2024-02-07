@@ -1,0 +1,11 @@
+<div *ngFor="let item of contentList; let i = index">
+    <div class="content-card" [ngClass]="{'first-border': i === 0}">
+      <h3>{{item.title}}</h3>
+      <img [src]="item.imgURL" alt="image-icon" (click)="handleImageClick(item)">
+      <p>{{item.description}}</p>
+      <p>{{item.creator}}</p>
+      <div class="content-tags" *ngFor="let tag of item.tags">
+        <p>{{tag}}</p>
+      </div>
+    </div>
+</div>
