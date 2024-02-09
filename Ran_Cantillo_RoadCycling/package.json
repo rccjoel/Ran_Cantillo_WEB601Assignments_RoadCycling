@@ -1,6 +1,6 @@
 {
   "name": "ran-cantillo-road-cycling",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

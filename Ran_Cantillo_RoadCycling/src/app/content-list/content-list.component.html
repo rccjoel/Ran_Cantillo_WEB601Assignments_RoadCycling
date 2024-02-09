@@ -1,11 +1,23 @@
-<div *ngFor="let item of contentList; let i = index">
-    <div class="content-card" [ngClass]="{'first-border': i === 0}">
-      <h3>{{item.title}}</h3>
-      <img [src]="item.imgURL" alt="image-icon" (click)="handleImageClick(item)">
-      <p>{{item.description}}</p>
-      <p>{{item.creator}}</p>
-      <div class="content-tags" *ngFor="let tag of item.tags">
-        <p>{{tag}}</p>
-      </div>
-    </div>
+<input type="text">
+<button>Check title</button>
+
+<h2>First Type</h2>
+<div *ngFor="let item of contentList | filterContent: 'placeholder'">
+  <div class="content-card first-type">
+    <h3>{{item.title}}</h3>
+  </div>
+</div>
+
+<h2>Second Type</h2>
+<div *ngFor="let item of contentList | filterContent: 'different'">
+  <div class="content-card second-type">
+    <h3>{{item.title}}</h3>
+  </div>
+</div>
+
+<h2>No Type</h2>
+<div *ngFor="let item of contentList | filterContent">
+  <div class="content-card no-type">
+    <h3>{{item.title}}</h3>
+  </div>
 </div>
