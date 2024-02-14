@@ -9,6 +9,18 @@
 <div *ngFor="let item of contentList | filterContent: 'placeholder'; let i = index">
   <div class="content-card first-type" [ngClass]="{highlight: searchIndex === i}">
     <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.creator}}</p>
+    <p appHoverAffect type="underline">{{item.type}}</p>
+    <div *ngFor="let tag of item.tags">
+      <p appHoverAffect tag="bold">{{tag}}</p>
+    </div>
+    <ng-container *ngIf="item.imgURL">
+      <img [src]="item.imgURL" alt="test">
+    </ng-container>
+    <ng-container *ngIf="!item.imgURL">
+      <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple49/v4/44/5e/31/445e3189-dd45-bcac-bcf2-18f7c9e00d7c/pr_source.png/256x256bb.jpg" alt="default">
+    </ng-container>
   </div>
 </div>
 
@@ -16,6 +28,13 @@
 <div *ngFor="let item of contentList | filterContent: 'different'; let i = index">
   <div class="content-card second-type" [ngClass]="{highlight: searchIndex === i}">
     <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.creator}}</p>
+    <p appHoverAffect>{{item.type}}</p>
+    <div *ngFor="let tag of item.tags">
+      <p appHoverAffect tag="bold">{{tag}}</p>
+    </div>
+    <img src="{{item.imgURL}}" alt="test">
   </div>
 </div>
 
@@ -23,5 +42,12 @@
 <div *ngFor="let item of contentList | filterContent; let i = index">
   <div class="content-card no-type" [ngClass]="{highlight: searchIndex === i}">
     <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.creator}}</p>
+    <p appHoverAffect>{{item.type}}</p>
+    <div *ngFor="let tag of item.tags">
+      <p appHoverAffect tag="bold">{{tag}}</p>
+    </div>
+    <img src="{{item.imgURL}}" alt="test">
   </div>
 </div>

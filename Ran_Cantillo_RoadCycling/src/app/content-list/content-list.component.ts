@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 import { FilterContentPipe } from '../filter-content.pipe';
+import { HoverAffectDirective } from '../hover-affect.directive';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, FilterContentPipe],
+  imports: [CommonModule, FilterContentPipe, HoverAffectDirective],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -17,7 +18,7 @@ export class ContentListComponent {
       title: 'Shimano',
       description: 'Japanese builder',
       creator: 'Creator 1',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
+      imgURL: 'https://cdn-icons-png.flaticon.com/256/14/14886.png',
       type: 'placeholder',
       tags: ['first', 'second']
     },
@@ -26,7 +27,6 @@ export class ContentListComponent {
       title: 'Sram',
       description: 'American builder',
       creator: 'Creator 2',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
       type: 'placeholder',
       tags: ['first', 'second']
     },
@@ -35,7 +35,7 @@ export class ContentListComponent {
       title: 'Campagnolo',
       description: 'Italian builder',
       creator: 'Creator 3',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
+      imgURL: 'https://cdn-icons-png.flaticon.com/256/14/14886.png',
       type: 'placeholder',
       tags: ['first', 'second']
     },
@@ -44,7 +44,7 @@ export class ContentListComponent {
       title: 'Pinarello',
       description: 'Italian bike builder',
       creator: 'Creator 4',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
+      imgURL: 'https://cdn-icons-png.flaticon.com/256/14/14886.png',
       type: 'different',
       tags: ['first', 'second']
     },
@@ -53,7 +53,7 @@ export class ContentListComponent {
       title: 'De Rosa',
       description: 'Italian bike builder',
       creator: 'Creator 5',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
+      imgURL: 'https://cdn-icons-png.flaticon.com/256/14/14886.png',
       type: 'different',
       tags: ['first', 'second']
     },
@@ -62,7 +62,7 @@ export class ContentListComponent {
       title: 'Canyon',
       description: 'German bike builder',
       creator: 'Creator 6',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
+      imgURL: 'https://cdn-icons-png.flaticon.com/256/14/14886.png',
       tags: ['first', 'second']
     },
     {
@@ -70,7 +70,7 @@ export class ContentListComponent {
       title: 'Standert',
       description: 'German bike builder',
       creator: 'Creator 7',
-      imgURL: '/Ran_Cantillo_RoadCycling/src/assets/img/image-icon.jpg',
+      imgURL: 'https://cdn-icons-png.flaticon.com/256/14/14886.png',
       tags: ['first', 'second']
     }
   ]
