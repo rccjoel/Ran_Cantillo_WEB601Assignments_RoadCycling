@@ -74,4 +74,16 @@ export class ContentListComponent {
       tags: ['first', 'second']
     }
   ]
+
+  // Title search functionality
+  searchExists: boolean | null = null;
+  searchMessage: string = '';
+  searchIndex: number | null = null;
+
+  titleFilter(title: string) {
+    let exists = this.contentList.some(item => item.title.toLowerCase() === title.toLowerCase());
+    this.searchExists = exists;
+    this.searchIndex = this.searchExists ? this.contentList.findIndex(item => item.title.toLowerCase() === title.toLowerCase()) : null;
+    this.searchMessage = exists ? 'Item with this title exists' : 'Item with this title does not exists';
+  }
 }

@@ -1,23 +1,27 @@
-<input type="text">
-<button>Check title</button>
+<input type="text" #inputText>
+<button (click)="titleFilter(inputText.value)">Check title</button>
+
+<div *ngIf="searchMessage" [ngClass]="{'exists': searchExists, 'not-exists': !searchExists}">
+  {{ searchMessage }}
+</div>
 
 <h2>First Type</h2>
-<div *ngFor="let item of contentList | filterContent: 'placeholder'">
-  <div class="content-card first-type">
+<div *ngFor="let item of contentList | filterContent: 'placeholder'; let i = index">
+  <div class="content-card first-type" [ngClass]="{highlight: searchIndex === i}">
     <h3>{{item.title}}</h3>
   </div>
 </div>
 
 <h2>Second Type</h2>
-<div *ngFor="let item of contentList | filterContent: 'different'">
-  <div class="content-card second-type">
+<div *ngFor="let item of contentList | filterContent: 'different'; let i = index">
+  <div class="content-card second-type" [ngClass]="{highlight: searchIndex === i}">
     <h3>{{item.title}}</h3>
   </div>
 </div>
 
 <h2>No Type</h2>
-<div *ngFor="let item of contentList | filterContent">
-  <div class="content-card no-type">
+<div *ngFor="let item of contentList | filterContent; let i = index">
+  <div class="content-card no-type" [ngClass]="{highlight: searchIndex === i}">
     <h3>{{item.title}}</h3>
   </div>
 </div>
